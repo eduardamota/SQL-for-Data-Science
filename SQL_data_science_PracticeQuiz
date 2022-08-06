@@ -1,0 +1,10 @@
+---Q1) How many albums does the artist Led Zeppelin have? 
+
+Select 
+COUNT(DISTINCT AlbumID) AS n_album,
+AlbumID,
+ArtistId
+FROM albums
+Where ArtistId in (Select ArtistId
+    FROM artists
+    Where name = 'Led Zeppelin')
